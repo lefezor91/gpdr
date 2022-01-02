@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPDR final</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <router-link class="rl" to="/">
+          <div id="logo">
+            <img src="./assets/img/logo.png" alt="logo de l'appli" />
+            <p>
+              Outil de Gestion des Piece <br />
+              de Rechange
+            </p>
+          </div>
+        </router-link>
+        <nav>
+          <ul>
+            <router-link class="rl" to="/"
+              ><li><i class="fas fa-home"></i>Accueil</li></router-link
+            >
+            <router-link class="rl" to="/articles"
+              ><li><i class="fas fa-cogs"></i>Articles</li></router-link
+            >
+            <router-link class="rl" to="/transfert"
+              ><li>
+                <i class="fas fa-exchange-alt"></i>Transfert
+              </li></router-link
+            >
+            <router-link class="rl" to="/historique"
+              ><li><i class="fas fa-history"></i>Historique</li></router-link
+            >
+            <router-link class="rl" to="/profil"
+              ><li><i class="fas fa-user"> </i>Profil</li></router-link
+            >
+          </ul>
+        </nav>
+      </header>
+      <router-view></router-view>
+      <!-- <div id="accueil" class="screen">
+        <h1>Accueil</h1>
+      </div>
+      <div id="articles" class="screen">
+        <h1>Inventaire des articles</h1>
+      </div>
+      <div id="transferts" class="screen">
+        <h1>Transferer des articles</h1>
+      </div>
+      <div id="historique" class="screen">
+        <h1>Historique des operations</h1>
+      </div>
+      <div id="profil" class="screen">
+        <h1>Mon profil</h1>
+      </div> -->
+    </div>
+    <footer>
+      <div id="footer">
+        <p>Martial FEZEU - ALUTOLE 2021</p>
+      </div>
+    </footer>
+
+    <script type="text/x-template" id="home">
+      <div class="screen">
+
+        <h1> <i class="fas fa-home"></i> ACCUEIL </h1>
+        <h2>Bienvenue sur l'outil de gestion des pieces de rechange </h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi voluptatibus, similique quibusdam tempora totam cupiditate, ex deserunt minima fugit aliquid itaque facilis officia repellendus ipsum, eos quam explicabo harum iure.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, omnis illo nobis quaerat voluptate, quae iusto sit rerum error quibusdam dolores optio asperiores amet obcaecati rem et dolorem quo. Beatae suscipit expedita possimus ab ipsum cumque quam consequatur tenetur vero!
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum perspiciatis eum, nesciunt architecto accusamus animi nihil commodi saepe fugit maxime rem sint aspernatur ea fuga adipisci atque placeat ipsam, iusto a quas perferendis. Aut neque esse molestias pariatur voluptates est, asperiores, sunt repudiandae quos, natus soluta tempore totam tenetur? Quisquam est blanditiis maiores nemo, illo minima laudantium, provident culpa deleniti at pariatur consequuntur! Modi necessitatibus consequatur facere? Obcaecati sequi inventore illo. Sequi fuga exercitationem nostrum debitis, explicabo quaerat tempore, quis quae rem quibusdam officiis, facere temporibus. Consequatur, ab magnam. Natus ipsa quos aperiam deserunt veritatis saepe eos rem quam impedit.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, nihil et explicabo impedit officia amet obcaecati natus iure id dolore dicta rerum laudantium temporibus inventore ad quibusdam sint, culpa aliquam esse? Reprehenderit optio, vero obcaecati ea dolorum minus voluptatibus illum non veniam tempore asperiores impedit aliquam mollitia deserunt porro quae? Dolores nemo numquam eaque dolore repellendus aut pariatur nobis rem consequatur, molestiae modi sint at! Maxime enim fugit iusto. Commodi, voluptatibus? Soluta nemo ab nihil fugit nostrum voluptas libero modi velit, reprehenderit sint perspiciatis labore voluptates accusamus vel quasi dolores cum culpa at nisi magnam optio dolor consequatur eligendi facere?
+        </p>
+      </div>
+    </script>
+
+    <script type="text/x-template" id="transfert">
+      <div class="screen">
+        <h1> <i class="fas fa-exchange-alt"></i> Transferer des articles</h1>
+
+      </div>
+    </script>
+
+    <script type="text/x-template" id="articles">
+      <div class="screen artbox">
+
+        <div class='artnav'>
+          <ul>
+            <router-link class="rl" to="/articles/"><li class="li1 nonSelectionnable"><p >creer un article</p></li></router-link>
+            <router-link class="rl" to="/articles/supplyarticle"><li class="li2 nonSelectionnable"><p>approvisionner un article</p></li></router-link>
+            <router-link class="rl" to="/articles/listarticle"><li class="li3 nonSelectionnable"> <p>liste des articles</p></li></router-link>
+          </ul>
+        </div>
+        <div class="artcontent">
+          <div><h1> <i class="fas fa-cogs"></i>Articles</h1></div>
+          <router-view></router-view>
+        </div>
+
+      </div>
+    </script>
+
+    <script type="text/x-template" id="create-article">
+            <div class="create-article-content">
+      <div><h3>Créer un article</h3></div>
+      <div class="form-container">
+        <form method="post" class="row">
+          <div class="form-group col-6">
+            <label for="nom" class="form-label">Nom de l'Article :</label>
+            <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom de l'article">
+          </div>
+          <div class="form-group col-6">
+            <label for="reference" class="form-label">Reference :</label>
+            <input type="text" class="form-control" name="reference" id="reference" placeholder="Reference de l'article">
+          </div>
+          <div class="form-group col-3 mt-3">
+            <label for="categorie" class="form-label">Categorie :</label>
+            <select class="form-control" name="categorie" id="categorie">
+              <option value="n/a" selected>#selectionner#</option>
+              <option value="rechange">rechange</option>
+              <option value="consomable">consomable</option>
+            </select>
+          </div>
+          <div class="form-group col-3 mt-3">
+            <label for="sous_categorie" class="form-label">Application :</label>
+            <select class="form-control" name="sous_categorie" id="sous_categorie">
+              <option value="n/a" selected>#selectionner#</option>
+              <option value="electrique">Electrique</option>
+              <option value="mecanique">Mecanique</option>
+            </select>
+          </div>
+          <div class="form-group col-2 mt-3">
+            <label for="qantite_magasin" class="form-label">Stock initial :</label>
+            <input type="number" min="0" class="form-control" id="quantite_magasin" name="quantite_magasin">
+          </div>
+          <div class="form-group col-4 mt-3">
+            <label for="description" class="form-label">Details :</label>
+            <textarea name="description" id="description" class="form-control" placeholder="entrez les details de l'article ici"></textarea>
+          </div>
+          <div>
+            <input type="submit" class="btn btn-primary" value="Ajouter" />
+          </div>
+        </form>
+      </div>
+            </div>
+    </script>
+
+    <script src="./assets/cdn/vue.js"></script>
+    <script src="./assets/cdn/vue-router.js"></script>
+    <script src="./assets/js/vue.js"></script>
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>
